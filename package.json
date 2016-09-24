@@ -1,6 +1,6 @@
 {
   "name": "diverse-ui",
-  "version": "0.0.1",
+  "version": "0.0.1a",
   "description": "Node API for Interfacing with Diverse UI",
   "main": "index.js",
   "scripts": {

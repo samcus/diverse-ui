@@ -15,11 +15,13 @@ Require as
 ```js
 // ES5
 var DiverseUI = require('diverse-ui');
+var person = new DiverseUI;
 person.getAll().then(function(data){
   console.log(data);
 });
 //ES6
 let DiverseUI = require('diverse-ui');
+let person = new DiverseUI;
 person.getAll().then((data)=>{
   console.log(data);
 });
