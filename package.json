@@ -1,0 +1,30 @@
+{
+  "name": "diverse-ui",
+  "version": "0.0.1",
+  "description": "Node API for Interfacing with Diverse UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samcus/diverse-ui.git"
+  },
+  "keywords": [
+    "diverse-ui",
+    "ui",
+    "avatars",
+    "api"
+  ],
+  "author": "Samuel Anthony Custer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samcus/diverse-ui/issues"
+  },
+  "homepage": "https://github.com/samcus/diverse-ui#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "cheerio": "^0.22.0",
+    "request": "^2.75.0"
+  }
+}
