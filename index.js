@@ -1,6 +1,6 @@
 'use strict';
-let request = require('request');
-let Promise = require('bluebird');
+const request = require('request');
+const Promise = require('bluebird');
 
 class DiverseUI {
   constructor() {}
