@@ -28,6 +28,6 @@ person.getRandom("female").then((data)=>{
   console.log(data);
 });
 //List a Specific DiverseUI Person
-person.getSpecific("female-121").then((data)=>{
+person.getSpecific("female-21").then((data)=>{
   console.log(data);
 });
