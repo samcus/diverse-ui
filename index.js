@@ -39,10 +39,34 @@ class DiverseUI {
   getAll(gender) {
     return this.get(gender);
   }
-  
+
   getRandom(gender) {
     return this.get(gender, 1);
   }
+
+  getSpecific(slug) {
+    return new Promise((resolve,reject)=> {
+      let getPeople = this.get();
+      getPeople.then((people)=> {
+        if (slug !== undefined) {
+          let filterSlug = slug;
+          let removeIndex = people.map((item)=> {
+            if((item.url).indexOf(filterSlug) == -1) {
+              delete item.gender;
+              delete item.url;
+            }
+          });
+          resolve(JSON.parse(cleanArray(people)));
+        }
+      });
+    });
+  }
+
 }
 
 module.exports = DiverseUI;
+
+// Clean an array of empty objects
+function cleanArray(originalArray){
+  return JSON.stringify(originalArray.filter(function(el) { return typeof el != "object" || Array.isArray(el) || Object.keys(el).length > 0;}));
+}
