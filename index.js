@@ -5,9 +5,17 @@ const Promise = require('bluebird');
 class DiverseUI {
   constructor() {}
 
-  getAll(gender) {
+  get(gender, count) {
     const url = 'http://www.diverseui.com/images';
-    const params = gender ? {gender: gender} : {};
+    let params = {};
+
+    if (gender) {
+      params.gender = gender;
+    }
+
+    if (count) {
+      params.count = count;
+    }
 
     return new Promise((resolve, reject) => {
       request({url: url, qs: params}, (error, response, body) => {
@@ -16,14 +24,24 @@ class DiverseUI {
         }
 
         if (!error && response.statusCode === 200) {
-          resolve(JSON.parse(body));
+          const people = JSON.parse(body);
+
+          if (count === 1) {
+            resolve(people[0]);
+          } else {
+            resolve(people);
+          }
         }
       });
     });
   }
+
+  getAll(gender) {
+    return this.get(gender);
+  }
   
   getRandom(gender) {
-    return this.getAll(gender);
+    return this.get(gender, 1);
   }
 }
 
